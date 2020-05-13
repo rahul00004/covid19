@@ -1,99 +1,82 @@
 <%- include("partials/header"); -%>
 
 
-  <h1>Confirmed Cases:<%=confirmed%></h1>
-  
+    <h1>Confirmed Cases:
+        <%=confirmed%>
+    </h1>
+ <form class="" action="/post" method="post">
+<input type="text" name="district" value="">
+<button type="submit" name="button">find</button>
+ </form>
 
 
 
-<h2>Responsive Table</h2>
-<div class="table-wrapper">
-    <table class="fl-table">
-        <thead>
-        <tr>
-            <th>Header 1</th>
-            <th>Header 2</th>
-            <th>Header 3</th>
-            <th>Header 4</th>
-            <th>Header 5</th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr>
-            <td>Content 1</td>
-            <td>Content 1</td>
-            <td>Content 1</td>
-            <td>Content 1</td>
-            <td>Content 1</td>
-        </tr>
-        <tr>
-            <td>Content 2</td>
-            <td>Content 2</td>
-            <td>Content 2</td>
-            <td>Content 2</td>
-            <td>Content 2</td>
-        </tr>
-        <tr>
-            <td>Content 3</td>
-            <td>Content 3</td>
-            <td>Content 3</td>
-            <td>Content 3</td>
-            <td>Content 3</td>
-        </tr>
-        <tr>
-            <td>Content 4</td>
-            <td>Content 4</td>
-            <td>Content 4</td>
-            <td>Content 4</td>
-            <td>Content 4</td>
-        </tr>
-        <tr>
-            <td>Content 5</td>
-            <td>Content 5</td>
-            <td>Content 5</td>
-            <td>Content 5</td>
-            <td>Content 5</td>
-        </tr>
-        <tr>
-            <td>Content 6</td>
-            <td>Content 6</td>
-            <td>Content 6</td>
-            <td>Content 6</td>
-            <td>Content 6</td>
-        </tr>
-        <tr>
-            <td>Content 7</td>
-            <td>Content 7</td>
-            <td>Content 7</td>
-            <td>Content 7</td>
-            <td>Content 7</td>
-        </tr>
-        <tr>
-            <td>Content 8</td>
-            <td>Content 8</td>
-            <td>Content 8</td>
-            <td>Content 8</td>
-            <td>Content 8</td>
-        </tr>
-        <tr>
-            <td>Content 9</td>
-            <td>Content 9</td>
-            <td>Content 9</td>
-            <td>Content 9</td>
-            <td>Content 9</td>
-        </tr>
-        <tr>
-            <td>Content 10</td>
-            <td>Content 10</td>
-            <td>Content 10</td>
-            <td>Content 10</td>
-            <td>Content 10</td>
-        </tr>
-        <tbody>
-    </table>
-</div>
+    <h2>COVID-19 Tracker</h2>
+    <div class="table-wrapper">
+        <table class="fl-table">
+            <thead>
+                <tr>
+                    <th>Statewise</th>
+                    <th>Active</th>
+                    <th>Confirmed</th>
+                    <th>deaths</th>
+                    <th>Recovered</th>
+                    <th>Last Updated</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        OverAll</td>
+                    <td>
+                       <%=total_values.active%>
+                    </td>
+                    <td>
+                        <%=total_values.confirmed%>
+                    </td>
+                    <td>
+                        <%=total_values.deaths%>
+                    </td>
+                    <td>
+                        <%=total_values.recovered%>
+                    </td>
+                    <td>
+                        <%=total_values.lastupdatedtime%>
+                    </td>
+                </tr>
+
+                <% Object.keys(state_wise).forEach(function(key){ %>
+                    <tr>
+                        <td>
+                            <%=key%>
+                        </td>
+                        <td>
+                            <%= state_wise[key].active %>
+                        </td>
+                        <td>
+                            <%= state_wise[key].confirmed %>
+                        </td>
+                        <td>
+                            <%= state_wise[key].deaths %>
+                        </td>
+                        <td>
+                            <%= state_wise[key].recovered %>
+                        </td>
+                        <td>
+                            <%= state_wise[key].lastupdatedtime %>
+                        </td>
+
+                    </tr>
+                    <% }); %>
+                        <tbody>
+        </table>
+    </div>
 
 
 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script type="text/javascript">
+  alert('hi')
 
-<%- include("partials/footer"); -%>
+</script>
+    <%- include("partials/footer"); -%>

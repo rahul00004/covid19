@@ -1,7 +1,3 @@
-
-
-
-
 {
   "name": "covid19",
   "version": "1.0.0",
@@ -14,6 +10,7 @@
     "express": "^4.17.1",
     "lodash": "^4.17.15",
     "parser": "^0.1.4",
+    "reload": "^3.0.4",
     "request": "^2.88.2"
   },
   "devDependencies": {
